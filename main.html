@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>AAVISHKAR MANTHAN</title>
+</head>
+<body>
+  <nav class="navbar">
+  <ul class="navbar-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="countdown-section" style="display: flex; justify-content: center; margin-top: 120px;">
+<script src="https://cdn.logwork.com/widget/countdown.js"></script>
+<a href="https://logwork.com/countdown-timer" class="countdown-timer" data-timezone="Asia/Kolkata" data-date="2025-11-12 19:55" data-background="#a600ff" data-digitscolor="#ffffff">Countdown Timer</a>
+</section>
+
+<p style="max-width: 6rem;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod perferendis perspiciatis, itaque quaerat odio quae reprehenderit exercitationem qui tempora? Ipsum necessitatibus eum illum inventore nisi doloremque iusto, laboriosam libero eos.</p>
+
+<h1 style="max-width: 6rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam illo, alias atque, animi deleniti voluptatibus earum numquam error itaque quaerat similique, possimus hic nemo. Ipsum vel quisquam saepe at iure.</h1>
+
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic perferendis iste assumenda sed nostrum repudiandae quaerat, quos, praesentium porro magni nemo? Placeat soluta molestias beatae illo ex officiis exercitationem omnis?</p>
+
+<script>
+// Set the date we're counting down to (example: Dec 31, 2024 23:59:59)
+const countDownDate = new Date("Dec 31, 2024 23:59:59").getTime();
+
+const timerElement = document.getElementById("timer");
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  if (distance > 0) {
+    timerElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  } else {
+    timerElement.textContent = "Event Started!";
+    clearInterval(countdownInterval);
+  }
+}
+
+const countdownInterval = setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
